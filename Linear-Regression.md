@@ -1,10 +1,10 @@
-Linear Regression Lecture Notes
+# Linear Regression
 
 This document provides a comprehensive overview of the linear regression algorithm, including its motivation, mathematical formulation, and optimization techniques such as batch gradient descent, stochastic gradient descent, and the normal equations.
 
 ---
 
-# Introduction
+## Introduction
 
 Linear regression is one of the simplest supervised learning algorithms, particularly for regression problems where the output is a continuous value. A practical example is used to motivate the concept, followed by definitions of key notations and concepts.
 
