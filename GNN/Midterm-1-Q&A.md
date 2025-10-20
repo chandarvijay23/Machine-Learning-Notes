@@ -14,7 +14,7 @@ Two examples of loss functions $\mathcal{L}(y, \hat{y})$ that measure the cost o
 1.  **Quadratic loss:** Often used in estimation problems, it measures the squared Euclidean distance between the actual output and the prediction:
     $$\mathcal{L}(y, \hat{y}) = \|y - \hat{y}\|_2^2$$.
 2.  **Hit loss:** Often used in classification problems, it counts the number of components where the real output $y$ and its prediction $\hat{y}$ disagree:
-    $$\mathcal{L}(y, \hat{y}) = \|y - \hat{y}\|_0 = \#(y \neq \hat{y})$$.
+    $$\mathcal{L}(y, \hat{y}) = \|y - \hat{y}\|_0 = \text{number of components where } y \neq \hat{y}$$.
 
 ## Question 2 (2 points). Explain why Empirical Risk Minimization without the use of a learning parameterization is a nonsensical formulation of machine learning.
 
@@ -129,7 +129,7 @@ This leads to the observation that designers must choose models that are not onl
 
 *   **Adjacency Matrix ($A$):** A sparse matrix where the $i, j$ entry $A_{ij}$ is non-zero if and only if the pair $(i, j)$ is an edge of the graph. If non-zero, $A_{ij}$ records the **weight $w_{ij}$**.
 *   **Laplacian Matrix ($L$):** Defined as the difference between the **degree matrix $D$** (a diagonal matrix containing the node degrees $d_i$ on the diagonal) and the adjacency matrix $A$:
-    $$L = D - A = \operatorname{diag}(A\mathbf{1}) - A$$.
+    $$L = D - A = \text{diag}(A\mathbf{1}) - A$$.
 *   **Normalized Adjacency Matrix ($\bar{A}$):** Defined using the inverse square root of the degree matrix $D$:
     $$\bar{A} := D^{-1/2} A D^{-1/2}$$. The entries are $(\bar{A})_{ij} = w_{ij} / \sqrt{d_i d_j}$.
 *   **Normalized Laplacian Matrix ($\bar{L}$):** Defined using the same normalization:
@@ -673,9 +673,9 @@ $$\hat{S} = S + E$$.
 Since graphs related by a permutation $P$ are considered the same (relabeling), the distance between $S$ and $\hat{S}$ must account for all possible relabelings.
 
 1.  The set of all possible error matrices $\tilde{E}$ relating $S$ to a permuted version of $\hat{S}$ is defined as:
-    $$\mathcal{E}(S, \hat{S}) = \left\{ \tilde{E} : P^T \hat{S} P = S + \tilde{E}, P \in \mathcal{P} \right\}$$.
+    $$\mathcal{E}(S, \hat{S}) = \{ \tilde{E} : P^T \hat{S} P = S + \tilde{E}, P \in \mathcal{P} \}$$.
 2.  The **error matrix modulo permutation** $E$ is the element in $\mathcal{E}(S, \hat{S})$ with the minimum operator norm:
-    $$E = \operatorname{argmin}_{\tilde{E} \in \mathcal{E}(S, \hat{S})} \|\tilde{E}\|$$.
+    $$E = \text{argmin}_{\tilde{E} \in \mathcal{E}(S, \hat{S})} \|\tilde{E}\|$$.
 3.  The **operator distance modulo permutation** $d(S, \hat{S})$ is then defined explicitly in terms of the norm of this minimal error matrix $E$:
     $$d(S, \hat{S}) = \|E\| = \min_{\tilde{E} \in \mathcal{E}(S, \hat{S})} \|\tilde{E}\|$$.
 
@@ -696,7 +696,7 @@ For the relative model, the perturbation must also be considered modulo permutat
 
 1.  The set of relative error matrices modulo permutation is defined using the condition $P^T \hat{S} P = S + \tilde{E} S + S \tilde{E}$.
 2.  The **relative error matrix modulo permutation** $E$ is the matrix $\tilde{E}$ in this set with the smallest operator norm:
-    $$E = \operatorname{argmin}_{\tilde{E} \in \mathcal{E}(S, \hat{S})} \|\tilde{E}\|$$.
+    $$E = \text{argmin}_{\tilde{E} \in \mathcal{E}(S, \hat{S})} \|\tilde{E}\|$$.
 3.  The **relative distance modulo permutation** $d(S, \hat{S})$ is defined by the norm of this minimal error matrix $E$:
     $$d(S, \hat{S}) = \|E\|$$.
 
