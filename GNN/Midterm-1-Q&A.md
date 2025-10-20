@@ -5,7 +5,7 @@
 **Statistical Risk Minimization (SRM)** is the optimization program used to formulate learning as a mathematical process. It involves averaging the loss $\mathcal{L}(y, \Phi(x))$ over **nature's probability distribution $p(x, y)$** and choosing the best estimator or classifier $\Phi$.
 
 The formulation seeks the optimal function $\Phi^*$ that minimizes this average cost (risk) over all possible estimators:
-$$\Phi^* = \operatorname{argmin}_\Phi E_{p(x,y)} \left[ \mathcal{L}(y, \Phi(x)) \right]$$.
+$$\Phi^* = \text{argmin}_\Phi E_{p(x,y)} \left[ \mathcal{L}(y, \Phi(x)) \right]$$.
 
 The AI predicts an output $\hat{y} = \Phi(x)$, while nature draws the actual output $y$ according to $p(x, y)$; the SRM then minimizes the expectation of the resulting loss. The outcome of solving this problem (learning/training) is the function $\Phi^*$ with the minimum average statistical loss.
 
